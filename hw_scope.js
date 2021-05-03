@@ -11,8 +11,9 @@ const scenario = {
   
   const verdict = declareMurderer();
   console.log(verdict);
-
-  
+// Will return the murderer: Miss Scarlet.
+// The const declareMurder is reasigned under another variable name, but when we return the verdict, we call the function declareMurder, which will return the same value as in line 9.
+// ****************************************************************************************************************************************************************************
 
 // Episode 2
 const murderer = 'Professor Plum';
@@ -28,7 +29,8 @@ const declareMurderer = function() {
 changeMurderer();
 const verdict = declareMurderer();
 console.log(verdict);
-
+// murderer is a const and you cannot assign a new value to it. You could modify it if it was an object or an array.
+// ****************************************************************************************************************************************************************************
 // Episode 3
 let murderer = 'Professor Plum';
 
@@ -42,7 +44,9 @@ console.log('First Verdict: ', firstVerdict);
 
 const secondVerdict = `The murderer is ${murderer}.`;
 console.log('Second Verdict: ', secondVerdict);
-
+// firstVerdict will return Mrs. Peacock by calling a function
+// secondVerdict will return Mrs. Plum because we are printing the variable murder that was declared above
+// ****************************************************************************************************************************************************************************
 // Episode 4
 let suspectOne = 'Miss Scarlet';
 let suspectTwo = 'Professor Plum';
@@ -56,9 +60,9 @@ const declareAllSuspects = function() {
 const suspects = declareAllSuspects();
 console.log(suspects);
 console.log(`Suspect three is ${suspectThree}.`);
-
-
-
+// When we first print the suspects, the 3rd suspect will be changed within the scope of the function declareAllSuspects
+//  the second print cannot acces the block scope changes, therefore will use the 3rd suspect as it is declared above
+// ****************************************************************************************************************************************************************************
 // Episode 5
 const scenario = {
     murderer: 'Miss Scarlet',
@@ -77,9 +81,9 @@ const scenario = {
   changeWeapon('Revolver');
   const verdict = declareWeapon();
   console.log(verdict);
+// No scope errors, the weapon can be reasigned because we can edit objects inside themsleves
 
-
-
+// ****************************************************************************************************************************************************************************
 // Episode 6
 let murderer = 'Colonel Mustard';
 
@@ -100,7 +104,8 @@ const declareMurderer = function () {
 changeMurderer();
 const verdict = declareMurderer();
 console.log(verdict);
-
+// The answer is Mrs. White because const plotTwist is inside the other function, therefore we can chnage the value of the murderer. When we call the function declareMurderer, we use the reasigned value of the murderer
+// ****************************************************************************************************************************************************************************
 // Episode 7
 let murderer = 'Professor Plum';
 
@@ -127,8 +132,8 @@ const declareMurderer = function() {
 changeMurderer();
 const verdict = declareMurderer();
 console.log(verdict);
-
-
+// Function plotTwist can not override function changeMurderer, because of block scope problems. Function unexpectedOutcome returns only inside the plotTwist. So the murderer is Mr. Green. Very similar to the previous episode, exept that the plotTwist murderer was conts, and in here we have a let variable. So everything after "murderer = 'Mr. Green';" is redundunt
+// ****************************************************************************************************************************************************************************
 // Episode 8
 const scenario = {
     murderer: 'Mrs. Peacock',
@@ -164,9 +169,9 @@ const scenario = {
   changeScenario();
   const verdict = declareWeapon();
   console.log(verdict);
+// No scope issues, the value of the weapon can be reasigned to candle stick.
 
-
-
+// ****************************************************************************************************************************************************************************
 //   Episode 9
 let murderer = 'Professor Plum';
 
@@ -180,3 +185,4 @@ const declareMurderer = function() {
 
 const verdict = declareMurderer();
 console.log(verdict);
+// Block scope issues: we reasign the murderer within the if conditional statement, therefore when we call the murderer later, the murderer is not cgnaged and holds the values as declared above the function
